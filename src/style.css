@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 450px;           /* 480'den 650'ye çıkardık */
+    padding: 25px;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f7fa;
+}
+h2 {
+    color: #1a202c;
+    font-size: 15px;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Textarea Container */
+.textarea-container {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+.toolbar-left {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.copy-btn {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+    font-weight: 600;
+}
+.copy-btn:hover {
+    background: #059669;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+.copy-btn:active {
+    transform: translateY(0);
+}
+.copy-btn.copied {
+    background: #34d399;
+}
+textarea {
+    width: 100%;
+    height: 200px;          /* 180'den 200'e çıkardık */
+    padding: 16px;
+    border: none;
+    font-size: 15px;        /* 14'ten 15'e */
+    resize: vertical;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    color: #1a202c;
+}
+textarea:focus {
+    outline: none;
+}
+textarea::placeholder {
+    color: #cbd5e0;
+}
+
+/* Dönüştür Butonu */
+.convert-btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 16px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;        /* 16'dan 17'ye */
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    letter-spacing: 0.3px;
+}
+.convert-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+.convert-btn:active {
+    transform: translateY(0);
+}
+
+/* Info Box */
+.info {
+    margin-top: 16px;
+    padding: 14px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.6;
+    border-left: 4px solid #3b82f6;
+}
+.info strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #1e293b;
+    font-size: 13px;
+}
+.info ul {
+    list-style: none;
+    padding-left: 0;
+}
+.info li {
+    padding: 4px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 12px;
+}
+.info li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Türkçe Karakter Paleti - EN ALTA */
+.char-palette {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 14px;          /* 12'den 14'e */
+    margin-top: 16px;
+    border: 2px dashed #cbd5e0;
+}
+.char-palette-title {
+    font-size: 11px;
+    color: #64748b;
+    margin-bottom: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.char-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 6px;              /* 6'dan 8'e */
+}
+.char-btn {
+    aspect-ratio: 1;
+    background: white;
+    color: #475569;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;        /* 16'dan 18'e */
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+.char-btn:hover {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+.char-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+.char-btn.clicked {
+    animation: clickEffect 0.4s ease;
+}
+@keyframes clickEffect {
+    0% { 
+        transform: scale(1); 
+        background: white;
+    }
+    50% { 
+        transform: scale(1.15); 
+        background: #10b981;
+        color: white;
+        border-color: #10b981;
+    }
+    100% { 
+        transform: scale(1);
+        background: white;
+    }
+}

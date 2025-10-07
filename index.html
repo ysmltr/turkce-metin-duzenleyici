@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Türkçe Karakter Dönüştürücü</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Türkçe Metin Düzenleyici</h2>
+    
+    <!-- Textarea -->
+    <div class="textarea-container">
+        <div class="toolbar">
+            <div class="toolbar-left">
+                <i class="fas fa-pen"></i>
+                Metninizi yazın
+            </div>
+            <button class="copy-btn" id="copyBtn">
+                <i class="fas fa-copy"></i>
+                <span>Kopyala</span>
+            </button>
+        </div>
+        <textarea id="inputText" placeholder="Buraya yazın... Örnek: gunaydin nasilsiniz? cok guzel!"></textarea>
+    </div>
+    
+    <!-- Dönüştür Butonu -->
+    <button class="convert-btn" id="convertBtn">
+        <i class="fas fa-wand-magic-sparkles"></i>
+        DÖNÜŞTÜR
+    </button>
+  
+    <!-- Türkçe Karakter Paleti - EN ALTA -->
+    <div class="char-palette">
+        <div class="char-palette-title">
+            <i class="fas fa-keyboard"></i>
+            Türkçe Karakterler
+        </div>
+        <div class="char-grid">
+            <button class="char-btn" data-char="ç" title="Küçük ç">ç</button>
+            <button class="char-btn" data-char="Ç" title="Büyük Ç">Ç</button>
+            <button class="char-btn" data-char="ğ" title="Küçük ğ">ğ</button>
+            <button class="char-btn" data-char="Ğ" title="Büyük Ğ">Ğ</button>
+            <button class="char-btn" data-char="ı" title="Küçük ı">ı</button>
+            <button class="char-btn" data-char="i" title="Küçük ı">i</button>
+            <button class="char-btn" data-char="İ" title="Büyük İ">İ</button>
+            <button class="char-btn" data-char="ö" title="Küçük ö">ö</button>
+            <button class="char-btn" data-char="Ö" title="Büyük Ö">Ö</button>
+            <button class="char-btn" data-char="ş" title="Küçük ş">ş</button>
+            <button class="char-btn" data-char="Ş" title="Büyük Ş">Ş</button>
+            <button class="char-btn" data-char="ü" title="Küçük ü">ü</button>
+            <button class="char-btn" data-char="Ü" title="Büyük Ü">Ü</button>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
